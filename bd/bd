@@ -1,0 +1,23 @@
+SET GLOBAL time_zone = '+8:00';
+DROP DATABASE IF EXISTS cl1_merma;
+CREATE DATABASE cl1_merma;
+use cl1_merma;
+
+create table tb_doctor(
+id_doctor int not null auto_increment primary key,
+nom_doctor varchar(64) not null,
+esp_doctor varchar(64) not null
+);
+
+create table tb_cita (
+id_cita int not null auto_increment primary key,
+num_cita int not null ,
+fecha_cita varchar(15) not null,
+nom_paciente varchar(64) not null,
+cita_doctor int not null,
+foreign key (cita_doctor) references tb_doctor(id_doctor)
+);
+
+
+select * from tb_cita;
+select * from tb_doctor;
