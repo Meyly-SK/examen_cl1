@@ -36,6 +36,15 @@ public class Cita implements Serializable{
 	@ManyToOne
 	@JoinColumn(name = "cita_doctor")
 	private Doctor cita_doctor;
+	
+
+	public Doctor getCita_doctor() {
+		return cita_doctor;
+	}
+
+	public void setCita_doctor(Doctor cita_doctor) {
+		this.cita_doctor = cita_doctor;
+	}
 
 	public int getC_id() {
 		return c_id;
